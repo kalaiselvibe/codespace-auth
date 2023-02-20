@@ -1,0 +1,20 @@
+{
+  "name": "codespace-auth",
+  "version": "1.0.0",
+  "description": "auth github codespce",
+  "main": "index.js",
+  "scripts": {
+    "start":"index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalaiselvibe/codespace-auth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kalaiselvibe/codespace-auth/issues"
+  },
+  "homepage": "https://github.com/kalaiselvibe/codespace-auth#readme"
+}
