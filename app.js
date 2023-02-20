@@ -4,14 +4,14 @@ const user = require('./model/user')
 const express = require('express')
 const bycript =require('bcryptjs')
 const jwt =require('jsonwebtoken')
-const cookieParser =require('cookies-parser')
+const cookieParser =require('cookie-parser')
 
 const app =express()
 app.use(express.json())
 app.use(cookieParser())
 
 
-app/get("/",(req,res)=>{
+app.get("/",(req,res)=>{
     res.send("<h1>server is working</h1>")
 })
 app.post("/register",async(req,res) =>{
@@ -34,9 +34,9 @@ const myEncPassword = await bycript.hash(password, 10)
 
         // save the user in db
        const user= await user.create({
-            firstname:firstname,
-            lastname:lastname,
-            email:email,
+            firstname,
+            lastname:
+            email,
             password: myEncPassword
         })
         // generate token for user and send it
