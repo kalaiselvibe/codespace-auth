@@ -4,7 +4,7 @@
   "description": "auth github codespce",
   "main": "index.js",
   "scripts": {
-    "start":"index.js"
+    "start": "index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/kalaiselvibe/codespace-auth/issues"
   },
-  "homepage": "https://github.com/kalaiselvibe/codespace-auth#readme"
+  "homepage": "https://github.com/kalaiselvibe/codespace-auth#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.9.2"
+  }
 }
