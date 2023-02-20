@@ -12,13 +12,24 @@
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	 "forwardPorts": [4000]
+	 "forwardPorts": [4000],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "yarn install",
+	 "postCreateCommand": "npm install",
 
 	// Configure tool-specific properties.
-	// "customizations": {},
+	"customizations": {
+"vscode":{"extension":[
+	"esben.prettier-vscode",
+	"rangav.vscode-thunder-client"
+],
+"setting":{
+	"editor.fontsize":32,
+	"terminal.integrated.fontsize":24
+}
+}
+
+	}
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
