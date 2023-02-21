@@ -30,7 +30,7 @@ if(existingUser){
 
 
         // encrypt the password
-const myEncPassword = await bycript.hash(password, 10)
+const myEncPassword = await bcrypt.hash(password, 10)
 
         // save the user in db
        const user= await User.create({
