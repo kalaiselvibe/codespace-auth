@@ -1,6 +1,6 @@
 require('dotenv').config()
 require("./database/database").connect()
-const user = require('./model/user')
+const User = require('./model/user')
 const express = require('express')
 const bycript =require('bcryptjs')
 const jwt =require('jsonwebtoken')
@@ -23,7 +23,7 @@ app.post("/register",async(req,res) =>{
             res.status(400).send('All fields are compulsory')
         }
         //check if user already exists
-const  existingUser = await user.findOne({email })
+const  existingUser = await User.findOne({email })
 if(existingUser){
     res.status(401).send('User already exists with this email')
 }
@@ -33,7 +33,7 @@ if(existingUser){
 const myEncPassword = await bycript.hash(password, 10)
 
         // save the user in db
-       const user= await user.create({
+       const user= await User.create({
             firstname,
             lastname:
             email,
@@ -63,14 +63,14 @@ res.status(201).json(user)
             const {email,password}=req.body
             //validation
             if(!(email && password)){
-                res.sendStatus(400).sendStatus('sent all data')
+                res.Status(400).send('sent all data')
             }
             //find user in db
-            const user= await user.findOne({email})
+            const user= await User.findOne({email})
             //assignment - if user is not there, then what?
             //match the password
-            if (user && (await bycript.compare(password, user.password))){
-            jwt.sign(
+            if (user && (await bcrypt.compare(password, user.password))){
+        const token = jwt.sign(
 {id: user._id},
 'shhhhh',
 {
@@ -90,7 +90,7 @@ const options ={
 res.status(200).cookie("token",token,options).json({
     success:true,
     token,
-    user
+    User
 })
             
         }
