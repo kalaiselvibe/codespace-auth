@@ -37,7 +37,7 @@ const myEncPassword = await bycript.hash(password, 10)
             firstname,
             lastname,
             email,
-            password: myEncPassword
+            password:myEncPassword
         })
         // generate token for user and send it
         const token =jwt.sign(
