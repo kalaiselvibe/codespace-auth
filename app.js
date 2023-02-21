@@ -35,7 +35,7 @@ const myEncPassword = await bycript.hash(password, 10)
         // save the user in db
        const user= await User.create({
             firstname,
-            lastname:
+            lastname,
             email,
             password: myEncPassword
         })
