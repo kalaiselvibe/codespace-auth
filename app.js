@@ -63,7 +63,7 @@ res.status(201).json(user)
             const {email,password}=req.body
             //validation
             if(!(email && password)){
-                res.Status(400).send('sent all data')
+                res.status(400).send('sent all data')
             }
             //find user in db
             const user= await User.findOne({email})
@@ -90,7 +90,7 @@ const options ={
 res.status(200).cookie("token",token,options).json({
     success:true,
     token,
-    User
+    user
 })
             
         }
