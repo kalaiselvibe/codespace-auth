@@ -104,7 +104,7 @@ res.status(200).cookie("token",token,options).json({
 
     })
 
-app.get("/dashboard",auth,isAdmin(req,res)=>{
+app.get("/dashboard",auth,(req,res)=>{
 
   
 
