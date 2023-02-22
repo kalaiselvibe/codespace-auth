@@ -17,7 +17,7 @@ console.log(decode);
 req.user=decode
          }catch(error){
         console.log(error);
-        res.staus(401).send('invalid token')
+        res.status(401).send('invalid token')
          }
          return next()
 }
