@@ -101,4 +101,11 @@ res.status(200).cookie("token",token,options).json({
         }
 
     })
+
+app.get("/dashboard",(req,res)=>{
+    res.send('welcome to dashboard')
+})
+
+
+
     module.exports = app
