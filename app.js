@@ -107,7 +107,7 @@ res.status(200).cookie("token",token,options).json({
 app.get("/dashboard",auth,(req,res)=>{
 
   
-
+console.log(req.user);
 
     
 res.send('welcome to dashboard')
