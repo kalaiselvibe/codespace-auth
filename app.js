@@ -5,6 +5,8 @@ const express = require('express')
 const bcrypt =require('bcryptjs')
 const jwt =require('jsonwebtoken')
 const cookieParser =require('cookie-parser')
+const auth = require('./middleware/auth')
+
 
 const app =express()
 app.use(express.json())
@@ -102,8 +104,13 @@ res.status(200).cookie("token",token,options).json({
 
     })
 
-app.get("/dashboard",(req,res)=>{
-    res.send('welcome to dashboard')
+app.get("/dashboard",auth,isAdmin(req,res)=>{
+
+  
+
+
+    
+res.send('welcome to dashboard')
 })
 
 
